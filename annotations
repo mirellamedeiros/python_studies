@@ -398,6 +398,40 @@ The for loop is particularly useful because it is a type of loop that is control
 	for letter in word:
 		print(letter)
 
+range()
+Is a function that returns a sequence of numbers and is usually used for iterating over with a for loop.
+It can take three arguments: start, stop and step; and it can be used with one, two or all three of them.
+
+	mimi = range(5)
+
+	for num in mimi:
+		print(num)
+
+Calling range() with only one argument makes it so that the sequence of numbers returned by range will start at zero, then move up in increments of one untill one less than the argument is reached.
+
+Also note that when range() is called, the sequence of numbers that it returns has its own data type, called range:
+
+	mimi = range(5)
+
+	print(type(mimi)) # <class 'range'>
+
+Calling range() with two arguments creates and returns a sequence of numbers which starts at the first argument and increments up by one untill it stops at one less than the second argument. 
+
+	mimi = range(5, 10)
+
+	for num in mimi:
+		print(num)
+
+When range() is called with three arguments, it creates a sequence of numbers that starts at the first argument, increments up or down by the third argument and ends at one less than the second argument. The third argument, also known as step size, can be used to increment down since it can be negative.
+
+	mimi = range(1, 8, 2)
+
+	for num in mimi:
+		print(num)
+
+
+
+
 
 
 
