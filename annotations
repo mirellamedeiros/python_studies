@@ -220,6 +220,35 @@ You'll often want your function to produce something that can be used in express
 
 ((look up prism_exercise on this repository to see a good example of using return with expressions and input !))
 
+Introduction to Modules
+Modules contain sets of functions that can be used for many different things, to use these functions you must import their modules:
+
+-> Generic import - using just the keyword "import" and then the name of the module; "random" is a module that contains functions for creating random things such as random float's of interger values
+	
+	import random
+	
+To use a function from a module that has been generically imported you must call it, like here with the randint function:
+
+	import random
+
+	print(random.randint(1, 10))
+
+Here we got a random value between (greater/smaller than or equal to) 1 and 10!
+	
+-> Function import - when a specific function is imported from a module:
+	
+	from random import randit
+
+	print(randint(2, 9))
+
+-> Universal import - when you import any function from a module, so when you call a function from that module you do not need to type the module's name and a .
+	
+	from random import *
+
+	print(random()) # returns a float that is greater than or equal to 0.0 and less than 1.0 when it's called!
+	
+
+
 
 
   
