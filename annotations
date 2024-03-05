@@ -572,3 +572,105 @@ When you slice a list you get a list made up of a segment from a larger list:
 
 	mimi_list = [1, 2, 3, 4, 5, 6, 7, 
 	
+	print(mimi_list[:4]) # starts at the beginning, ends at index 4
+	print(mimi_list[3:8]) # starts at index 3, ends at index 8
+	print(mimi_list[6:]) # starts at index 6, goes to the end of string
+
+You can reassign the items in a list, just like a variable's value:
+
+	mimi_list = [1, 2, 3]
+	print(mimi_list)
+	mimi_list[1] = 4
+	print(mimi_list)
+
+del statements and list methods
+
+Delete values from a list:
+
+	mimi_list = [1, 2, 3]
+	del mimi_list[1]
+	print(mimi_list)
+
+Remove what you passed as an argument from a string list:
+
+	mimi_list = ["one", "two", "three"]
+	mimi_list.remove("two")
+	print(mimi_list)
+
+del vs .remove()
+Del removes an item based on its index number, while the remove method searches a list from whatever item you passed it as an argument and removes it from the list.
+
+.append()
+Takes an argument and adds it to the end of the list its used on:
+
+	mimi_list = ["mimi", "is"]
+	mimi_list.append("cute")
+	print(mimi_list)
+
+.insert()
+Similar to .append() but you can add it anywhere on the list:
+
+	mimi_list = ["mimi", "is", "cute"]
+	mimi_list.insert(2, "very")
+	print(mimi_list)
+
+.sort()
+Can be used to sort lists made up of items that are all numbers, or items that are all strings.
+
+-> If you type reverse=True in the parentheses of the .sort() method when calling it, you can get items from a list in reverse order.
+
+-> The .sort() method cannot be used on mixed lists with different data types. It can't identify if strings are greater than numbers, or put numbers in an alphabetical order.
+
+-> Another thing to take note of when using the .sort() method is that the boolean value False will be taken as 0, and the value True will  be taken as 1.
+
+-> One final important thing to note about the sort method is that it doesn`t actually use alphabetical order, it uses ASCIIbetical order. 
+The only difference is that in ASCIIbetical order, uppercase letters come before lowercase letters.
+
+-> If you need to sort the list of strings by alphabetical order, use .sort(key=str.lower)
+
+.index()
+This method allows you to find out the index number of the item you pass it. When called, the .index() method returns the index number as an integer.
+
+	medieval_breakfast = ["ale", "bread", "cheese"]
+	print(medieval_breakfast.index("bread"))
+
+If an item appears more than once on a list, the method will return the first index it appears in.
+
+	medival_feast = ["ale", "bread", "cheese", "meat", "cheese", "bread", "ale"]
+	print(medieval_feast.index("cheese"))
+
+.pop()
+The .pop() method removes and returns an item from a list. You would use it instead of del or the remove method to remove an item from a list if you also wanted the removed item to be returned so that you could assign it to a variable,  print it, or use it in some other way.
+
+	cool_music = ["fleetwood mac", "paramore", "pixies"]
+	the_best_music = cool_music.pop(0)
+	print(cool_music)
+	print(the_best_music) # adding an index number will result in that item being returned
+
+
+Lists vs. Strings
+
+A list and a string both contain an ordered sequence of items. In addition, several things that can be done with strings can also be done with lists. 
+Because both of them have index numbers corresponding to what they contain, you can access their contents by index, get slices from them, use the length function to get the number of characters or items that they contain, and you can even iterate through either of them using a for loop or a while loop.
+
+The important distinction between lists and strings is that lists are mutable while strings are immutable. 
+
+For a data type to be mutable means that it can have values changed,  removed, or added. 
+
+	mimi_ex1 = [1, 2, 3]
+	mimi_ex1[1] = 5
+	print(mimi_ex1) # here we changed the item corresponding to index 1
+
+	mimi_ex2 = "123"
+	mimi_ex2[1] = 5
+	print(mimi_ex2) # it's not able to change because strings are immutable
+
+Here, you would need to reassign the variable mimi_ex2 to change its value.
+
+
+Creating new strings from old strings
+
+	str_1 = "No, you can't."
+	str_2 = "Yes" + str_1[3:11] + "!"
+	print(str_2)
+
