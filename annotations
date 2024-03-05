@@ -430,9 +430,68 @@ When range() is called with three arguments, it creates a sequence of numbers th
 		print(num)
 
 
+String methods 1:
 
+.upper() and .lower()
+The upper string method allows you to make everything in a string uppercase.
 
+.isupper() and .islower()
+Return a boolean value
 
+.isalpha() 
+Returns true is the string it's being used on only contains letters
+
+.isalnum()
+Only numbers and letters
+
+.isadecimal()
+Only numbers
+
+.isspace() 
+Only spaces
+
+.istitle() and .title()
+Only titlecase (words in the string all have the first letter capitalized), the method makes a string titlecase
+
+.startswith() and .endswith()
+Both take a string as its argument, return true if the string starts or ends with that argument
+Both are also case-sensitive
+
+.join()
+Useful when you have multiple strings that you want to join together in a single string
+
+	print("".join(["one", "two", "three"])) # onetwothree
+	print(" ".join(["one", "two", "three"])) # one two three
+	print(", ".join(["one", "two", "three"])) # one, two, three
+
+.split()
+Does the opposite of the .join() method, it splits the string and returns a list
+
+	print("eggs, milk, waffles, bacon".split()) # ['eggs,', 'milk,', 'waffles,', 'bacon']
+
+Notice how the commas were kept, this is because by default .split() separates the words in a string by spaces, if you wanted to separate them by commas:
+
+	print("eggs, milk, waffles, bacon".split(", ")) # ['eggs', 'milk', 'waffles', 'bacon']
+
+String methods 2
+
+.rjust() and .ljust()
+These methods can take one argument and return right justified or left justified versions of the strings they are called on
+The integer entered in the argument of these methods will be the total lenght of the string that is returned
+
+.center()
+Adds characters on both sides of the string
+
+.strip(), .rstrip() and .lstrip()
+Remove spaces or characters from a string, their arguments also need to be strings
+
+.replace()
+Used to search for and replace a string, it takes two strings as arguments, the first being the search one and the second being the replacement
+
+	print("good morning!".replace("morning", "afternoon"))
+
+.len()
+The length function lets you get the lenght of a iterable type such as a string
 
 
 
