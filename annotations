@@ -1,0 +1,230 @@
+Variables
+
+Assignment of variables:
+ex_var = 5
+
+Reassignment of variables:
+ex_var = 7
+
+Variable naming rules:
+	- Don't start with numbers or spaces
+	- No special characters
+	- "variableExample" is ok (camelCase)
+	- "variable_case_example" is also ok (snake_case)
+	- "v4riabl3" is also ok
+
+Basic data types
+
+Floating-point numbers - it's a number which has a decimal point
+float_1 = 1.234
+
+Integers - numbers with no fractional parts
+int_1 = 7
+
+Booleans - either true or false
+bool_1 = True
+bool_2 = False
+
+Comments
+Use the "#" symbol (with a space after)
+
+Expressions and basic math operators
+In python, we use +, -, / and *
+
+Exponentiation: 
+4 ** 4  (4*4, four times)
+= 256
+
+Floor division:
+16 // 5 (returns the smallest integer number)
+= 3
+
+Modulus:
+7 % 3
+= 1
+
+Assignment operators: operators used for reassignments
+
+Addition assignment: += 
+add_assign = 5
+
+Why use them?
+add_assign = add_assign + 7 (longer, more code)
+add-assign += 7 (less code!)
+
+Subtraction:
+sub = 10
+sub -= 5
+= 5
+
+Multiplication:
+mult = 10
+mult *= 5
+=50
+
+Division:
+div = 10
+div /= 5
+=2.0
+
+Exponentiation:
+exp = 10
+exp **= 2
+= 100
+
+Floor division: (arredonda pro menor inteiro mais próximo, o oposto, arredondando pra cima é o ceil - ceiling)
+floor = 10
+floor //= 6
+=1
+
+Modulo: (resto da divisão)
+mod = 10
+mod %= 7
+=3
+
+Order of operations: (from highest to lowest priority)
+
+() 
+**
+%, /, //, and *
++ and -
+
+More on floats
+When using decimal numbers in python expressions, there can be approximation erros. Since python is built on top on C, and C uses a limited number of digits to represent a float
+To avoid using floats in expressions, you can make them integers by multiplying the values by 10 or 100 and then divide them by the same value at the end:
+	ex1 = 1.23 + 2.80
+	(*100)
+	ex2 = (123 + 280) / 100
+	print(ex2)
+	= 4.03
+	
+You can also use the round() function if you know the number of digits that are supposed to be after the decimal point in the result, or you want an approximation and only a certain number or digits to be displayed after the decimal point:
+	ex3 = 1.23 + 2.80
+	print(round(ex3, 2))   
+	=4.03
+^^The 2 means that you only want 2 decimal numbers after the decimal point, it's an approximation!
+
+Strings
+A string is a sequence of characters in between single or double quotes, it`s preferabe to use double quotes because then you can use the single quotes within that string without having to use scape sequences (we'll see that later).
+
+  string1 = 'this is a string!'
+  string2 = "this is also a string!"
+  string3 = '1234'
+  string4 = "!#@@#$@"
+  string5 = ''
+  string6 = "HeLlO wOrLd"
+
+Every string is assigned an index number, which is the number of characters in that string, in python and other languages, the index starts at zero. Index numbers allow you to acess characters or groups of characters using them:
+
+  string_index = "mimi likes orange juice"  # starting from zero, the index number 3 corresponds to the last character !
+  print(string_index[2]) # will print the first "m" !
+  print("orange juice"[7]) # will print "j" !
+
+String Slicing
+Allows you to get slices of a string and assign them to variables or print them:
+
+  print(string_index[:3]) 
+  print(string_index[4:6])
+  print(string_index[7:])
+  mimi_slice = string_index[:4] # assign a slice to a variable !
+  print(mimi_slice)
+
+String Concatenation
+Adds the strings together with the "+":
+
+  print("mimi" + " " + "is cute !")
+  mimi_concatenation = "hello " + "mimi !"
+  print(mimi_concatenation[3:7])
+
+type() 
+The type function allows you to find out the data type of a piece of data:
+
+  mimi_boolean = True
+  print(type(mimi_boolean) # will result in a <class 'bool'>
+
+str()
+The string function converts whatever is put between the parentheses into a string.
+
+Escape Sequences
+Are special characters you can use and strings which enable you to, for example, insert quotes within them, and make different parts of strings appear on different lines in the output:
+
+\t
+The TAB character is used to make a horizontal space or indent when working with strings!
+
+  print("I\treally\tlike\tpython\t!") # I  really  like  python  !
+
+\n
+Stands for NEW LINE, as in:
+
+  print("hello!\nthis is a letter\nkind regards,\nmimi."
+
+\' and \"
+Use this to put quotes In your strings, depending or if you have used '' or "" to create the strings.
+
+\\
+The backlash escape sequence is used whenever you want to put a backlash in a string.
+
+These are only the most common escape sequences, there are tons more online!
+
+input()
+Makes your programs get and use input from a user:
+
+  name = input("enter your name here: ")
+
+int() and float()
+Similarly to the str() function, with these you can turn strings into numbers. This is very useful when you want to get numbers from a user using the input function, for example.
+
+Functions
+Allow you to reuse code on different variables and values. There are at least 5 parts to every function, the key word def, a function name, parentheses, a colon, then code that the function is meant to run:
+
+  def mimi_function():
+    print("mimi is learning python!" # here we defined what the function must do
+
+
+  mimi_function() # and here we are calling the function!
+
+After you define a function, you should have two blank lines after it before creating more code!
+
+Function Parameters
+A sixth element can be added to a function in the form of a parameter or multiple parameters. A parameter is a placeholder name for the variable or data that you want your function to run its code on.
+
+  def mimi_function2(mimi_parameter):
+    print("mimi says: " + mimi_parameter)
+
+
+  mimi_function("hello world") # calling the function with a parameter !
+
+Multiple Parameters
+When you define a function, you can create as many parameters as you want, they should be separated by ", ". And if you have anything before the function definition, you should also put two lines of distance!
+
+When a function is called, the items that you pass to it are called arguments.
+
+Default Parameters
+You can give a functions parameters values to default to in the event that the function is called without arguments for those parameters:
+
+  def mimi_function3(mimi_p1=2, mimi_p2=5):
+    print(mimi_p1 * mimi_p2)
+
+
+  mimi_function3(6) # and here the result will be 30, because we are swapping only the 2 !
+
+Return
+You'll often want your function to produce something that can be used in expressions or assigned to a variable rather than just printed.
+
+  def mimi_function4(mimi_p1=2, mimi_p2=5):
+    return mimi_p1 * mimi_p2
+
+
+  mimi_var = mimi_function4()
+  print(mimi_var)
+
+((look up prism_exercise on this repository to see a good example of using return with expressions and input !))
+
+
+
+  
+
+
+
+
+
