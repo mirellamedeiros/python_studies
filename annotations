@@ -1,10 +1,10 @@
 Variables
 
 Assignment of variables:
-ex_var = 5
+	ex_var = 5
 
 Reassignment of variables:
-ex_var = 7
+	ex_var = 7
 
 Variable naming rules:
 	- Don't start with numbers or spaces
@@ -16,14 +16,14 @@ Variable naming rules:
 Basic data types
 
 Floating-point numbers - it's a number which has a decimal point
-float_1 = 1.234
+	float_1 = 1.234
 
 Integers - numbers with no fractional parts
-int_1 = 7
+	int_1 = 7
 
 Booleans - either true or false
-bool_1 = True
-bool_2 = False
+	bool_1 = True
+	bool_2 = False
 
 Comments
 Use the "#" symbol (with a space after)
@@ -46,41 +46,41 @@ Modulus:
 Assignment operators: operators used for reassignments
 
 Addition assignment: += 
-add_assign = 5
+	add_assign = 5
 
 Why use them?
-add_assign = add_assign + 7 (longer, more code)
-add-assign += 7 (less code!)
+	add_assign = add_assign + 7 (longer, more code)
+	add-assign += 7 (less code!)
 
 Subtraction:
-sub = 10
-sub -= 5
-= 5
+	sub = 10
+	sub -= 5
+	= 5
 
 Multiplication:
-mult = 10
-mult *= 5
-=50
+	mult = 10
+	mult *= 5
+	=50
 
 Division:
-div = 10
-div /= 5
-=2.0
+	div = 10
+	div /= 5
+	=2.0
 
 Exponentiation:
-exp = 10
-exp **= 2
-= 100
+	exp = 10
+	exp **= 2
+	= 100
 
 Floor division: (arredonda pro menor inteiro mais próximo, o oposto, arredondando pra cima é o ceil - ceiling)
-floor = 10
-floor //= 6
-=1
+	floor = 10
+	floor //= 6
+	=1
 
 Modulo: (resto da divisão)
-mod = 10
-mod %= 7
-=3
+	mod = 10
+	mod %= 7
+	=3
 
 Order of operations: (from highest to lowest priority)
 
@@ -102,7 +102,7 @@ You can also use the round() function if you know the number of digits that are 
 	ex3 = 1.23 + 2.80
 	print(round(ex3, 2))   
 	=4.03
-^^The 2 means that you only want 2 decimal numbers after the decimal point, it's an approximation!
+The 2 means that you only want 2 decimal numbers after the decimal point, it's an approximation!
 
 Strings
 A string is a sequence of characters in between single or double quotes, it`s preferabe to use double quotes because then you can use the single quotes within that string without having to use scape sequences (we'll see that later).
