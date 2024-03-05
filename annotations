@@ -273,14 +273,135 @@ Flow charts are a type of diagram with a starting point which can have multiple 
 
 To represent a "yes or no" types of flow, we can use boolean values, comparison operators and boolean operators.
 	
-	- Boolean values: True or False
+-> Boolean values: True or False
 	
-	- Comparison operators: >, <, >=, <=, != and ==
-	Comparisons made using these operators evaluate to a boolean value
+-> Comparison operators: >, <, >=, <=, != and ==
+
+-> Comparisons made using these operators evaluate to a boolean value
+
+-> == and != can also be used to compare strings, this comparison IS case sensitive
+
+-> In these comparisons, floats and intergers can be equivalent
+
+= vs ==
+A single equal symbol is assignment to variables, while two is a comparison
+
+
+Boolean operators: AND, OR and NOT
+	
+The AND boolean operator will only return "true" if both statements it compares are true (T+T, instead of F+T, T+F or F+F)
+
+The OR boolean operator will only return "false" if both statements it compares are false (F+F, instead of F+T, T+F or T+T)
+
+The NOT boolean operator makes whatever is put after it evaluate to its opposite, as in "not True" evaluates to False, and "not False" evaluates to True
+
+
+Flow Control Statements: If Statements
+
+	mimi = input("mimi is: ")
+
+	if mimi == "cute":
+		print("yes, very :)")
+
+Else Statements
+
+	mimi = input("mimi is: ")
+
+	if mimi == "cute":
+		print("yes, very :)")
+	else:
+		print("try again!")
+
+Nested If and Else Statements
+
+	mimi_average = float(input("mimi, what's your grade average "))
+	mimi_assignments = input("and did you turn in all of your assignments? "))
+
+	if mimi_average >= 7.0:
+		if mimi_assignments == "yes":
+			print("you will graduate just fine!")
+		else:
+			print("mimi, you've forgotten your assignments!!!")
+	else:
+		print("this is a complete disaster!")
+
+
+Elif Statements - also known as else/if statements
+It allows us to provide as many additional conditions to check as we need without the messines that comes with having to use multiple nested if and if/else statements blocks
+
+	mimi_number = int(input("mimi, enter a integer number between 1 and 100: "))
+
+	if mimi_number < 0:
+		print("that's less than zero!")
+	elif mimi_number == 0:
+		print("that's zero!")
+	elif 0 < mimi_number <= 100:
+		print("well done!")
+	else:
+		print("that's greater than 100!")
+
+
+Truthy and Falsey Values: 
+
+For strings
+
+	mimi = input("type something here: ")
+
+	if mimi:
+		print("thanks!")
+	else:
+		print(":(")
+
+Sometimes you might find code like this, where instead of haing a condition using comparison operators, the if statement just has a string in front of it. However, this code will work because of truthy and falsey values for strings.
+For strings, anything other than an empty string is truthy. An empty string is falsey, meaning that it's equivalent to the "false" value.
+	
+Even so, it's better to be more specific with your conditions, for readability:
+
+	mimi = input("type something here: ")
+
+	if mimi != "":
+		print("thanks!")
+	else:
+		print(":(")	
+
+For integers
+Zero is the falsey value, and any other integers are truthys
+	
+For floats
+Zero point zero (0.0) is the falsey value, and any other floats are truthy
+	
+bool()
+This function can tell you the equivalent boolean value of anything
+
+  	print(bool(0)) # False
+	print (bool(400)) # True
+	print(bool(1.23) # True
+
+While Loops
+Loops are an useful tool for when you want to have code run on every item in a piece of data that has indexes such as string.
+
+	mimicounter = 0
+
+	while mimicounter < 3:
+		print("it's less than three")
+		mimicounter += 1
+
+When the condition given on the while loop evaluates to false it will stop. This is important because we should avoid infinite loops by making sure each while loop created has a condition which stops it from running its code an infinite amount of times. A closed loop if a while loop that will eventually stop running when its condition evaluates to false, which is good! 
+
+For loops
+
+When using the while loops, you won't know how many times the loop will run before it ends. 
+The for loop is particularly useful because it is a type of loop that is controlled by the lenght of the iterable piece of data that it's being used on rather than the condition.
+
+	word = "mimi"
+
+	for letter in word:
+		print(letter)
 
 
 
-  
+
+
 
 
 
