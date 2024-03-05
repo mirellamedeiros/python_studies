@@ -247,7 +247,36 @@ Here we got a random value between (greater/smaller than or equal to) 1 and 10!
 
 	print(random()) # returns a float that is greater than or equal to 0.0 and less than 1.0 when it's called!
 	
+Variable Scope
 
+In python, you can have a variable within a function that has the same name of a variable outside that function, however, despite having the same name, those variables are not the same! 
+Variables created within functions have a local scope, as opposed to those created outside functions, which have a global scope.
+
+	mimi_var = "global scope!"
+
+
+	def mimi_function():
+		mimi_variable = "local scope!"
+		return mimi_variable
+
+	print(mimi_variable)
+	print(mimi_function())
+
+-> Local variables cannot be used by code in the global scope
+-> Global variables can be acessed by code in the local scope
+-> The local scope of one function can't use variables from another function's local scope
+-> You can use the same name for different variables as long as they are in different scopes
+
+Intro to Flow Control
+
+Flow charts are a type of diagram with a starting point which can have multiple end points.
+
+To represent a "yes or no" types of flow, we can use boolean values, comparison operators and boolean operators.
+	
+	- Boolean values: True or False
+	
+	- Comparison operators: >, <, >=, <=, != and ==
+	Comparisons made using these operators evaluate to a boolean value
 
 
 
