@@ -493,10 +493,82 @@ Used to search for and replace a string, it takes two strings as arguments, the 
 .len()
 The length function lets you get the lenght of a iterable type such as a string
 
+.format() 
+Normally you would concatenate strings using the "+" operator.
+This method allows us to put {} inside strings to  mark where we want other strings to be inserted:
 
+	var_1 = input("name? ")
+	var_2 = input("age? ")
+	var_3 = input("occupation? ")
 
+	print("{} is {} years old, and works as a {}.".format(var_1, var_2, var_3))
 
+Introduction to lists
+Values within a list are known as "items".
 
+To create a list, use  [] and "," between the items:
 
+	list_1 = [1, 2, 3, 4]
+	list_2 = [2.45, 67.465]
+	list_3 = ["churrasco", "pão", "vinagrete"]
+	list_4 = [True, False]
+	list_5 = [[1, 2, 3], ["café da manhã", "almoço", "jantar"]]
+	list_6 = [1, "bolo de milho", True]
 
+A list can contain values of any data type, even other lists (a list of lists); the items also do not need to be all of the same data type.
 
+The list() function takes an iterable data type, such as a string, as an argument and converts it to a list that it then returns.
+
+	print(list("mimi")) # ['m', 'i', 'm', 'i']
+
+The "in" and "not in" operators  can be used whether a value is or isn't in a list:
+
+	mimi_list = [1, 2, 3, 4]
+
+	print(1 in mimi_list) # True
+
+You can also assign the value of that to a variable:
+
+	mimi_list = [1, 2, 3, 4]
+
+	mimi_check = 1 not in mimi_list
+	print(mimi_check) # False
+
+Indexes and slicing
+Each of the characters on a string, or item on a list, has its own index number; it always starts at 0.
+
+	mimi_list = ["indexnum0", "indexnum1", "indexnum2"]
+	print(mimi_list[1]) # indexnum1
+
+We can access an item from a list by using its index number.
+
+You can also access items from a list within another list:
+
+	mimi_list = ["indexnum0", "indexnum1", "indexnum2"]
+	print(mimi_list[2][1]) # 3
+
+You can access a value from a piece of data that has index numbers and is also an item within a list:
+
+	mimi_list = ["indexnum0", "indexnum1", "indexnum2"]
+	print(mimi_list[1][8]) # 1
+
+Negative indexes
+While index numbers and lists start from zero and go up by one for each item, a negative integer can be used when accessing by index in python.
+
+Start from the end of a list and go backwards:
+
+	mimi_list = [1, 2, 3, 4, 5]
+	print(mimi_list[-1]) # 5
+
+Items that have been accessed by index from lists can also be used in expressions and string concatenations provided they are the correct data type.
+
+	mimi_list = [True, 1, 2.34, "world!"]
+	print(mimi_list[2] + 5.67)
+	print("hello " + mimi_list[-1])
+
+List slicing
+
+When you slice a list you get a list made up of a segment from a larger list:
+
+	mimi_list = [1, 2, 3, 4, 5, 6, 7, 
+	
