@@ -1,3 +1,7 @@
+Welcome to my python annotations! This is mostly unnorganized, as I write it while studying and following classes and examples, so usually to find a specific information I search for key words!
+Eventually I plan to rewrite everything here in a better way!
+If you're a python student like me, or just a programmer in general, good luck and good studies (:
+
 Variables
 
 Assignment of variables:
@@ -1014,7 +1018,120 @@ Nested tuples
 	print(tuple_1.index(7))
 	print(tuple_1.index(1))
 
+Introduction to sets
+A set is a data type that consists of a collection of items, much like a list.
+Sets differ from lists in two important ways
+-> They cannot have duplicate values in them
+-> The items they contain are unordered, like the key-value pairs of a dictionary
 
+	set_1 = {1, 2, 3} # this way of creating a set, between {} is called "set literal"
+
+	set_2 = set({"a", "b", "c"}) # the other way of creating a set is by using the set function, which takes one set as an argument and returns it
+	print(set_1)
+	print(set_2)
+
+Duplicate items in a set will be ignored in the output.
+
+Also, the order of the items in the output is different from the editor window because items in a set are unordered.
+To create an empty set assign the set function without argument to a variable
+
+You can also pass the set function a call of the range function as an argument. The range will be turned into a set.
+
+	set_4 = set(range(1, 12, 2)) # in the range function, the three arguments are the start, stop and step
+	print(set_4)
+
+A set can hold items that are different data types.
+
+Unlike lists, sets cannot have their items accessed from them by index, so if you want to access the elements from a set, you can use a for loop.
+
+	set_5 = {1, 2, 3, 4, 5}
+
+	for number in set_5:
+		print(number)
+
+You can also check if an item is in a set by using "in".
+
+Sets are useful in situations where you want to use a collection of items, but you don`t want duplicate items in the collection and you also don't care about the order of the items that make up the collection.
+
+	olympic_cities = ["Athens", "Paris", "London", 
+			  "Stockholm", "Berlin", "Berlin", 
+			  "Tokyo", "London", "London"] # here we have a list with repeating items
+	# by making it a set, the output will only show each item once
+	print(set(olympic_cities))
+	print(len(olympic_cities)) # and we can then use the list function on the set function to convert the set back to a list
+	print(list(set(olympic_cities)))
+	print(len(list(set(olympic_cities))))
+
+Set methods
+
+.add()
+Takes an item of any data type as its argument and adds that to the set it is called on.
+
+.remove()
+Takes one argument of any data type and removes it from the set that it was called on.
+
+.discard()
+Does the same as .remove() and also takes one argument, but if it's used in a piece of data that is not on a set, it won't return an error message.
+
+.clear()
+Takes no arguments, gets rid of everything in the set.
+
+.copy()
+Returns a copy of a set that has its own place in memory.
+
+	fruits = {"apple", "banana", "grape", "mango"}
+	copied_fruits = fruits.copy()
+
+.union()
+Allows you to combine all of the items from two different sets into a single set.
+
+	set_1 = {1, 2, 3}
+	set_2 = {4, 5, 6}
+	set_3 = set_1.union(set_2)
+	print(set_3)
+
+An alternative to the .union() method is the pipe (|) character.
+
+	set_3 = set_1 | set_2
+
+.intersection()
+Allows you to find out what items two sections have in common.
+
+	set_3 = set_1.intersection(set_2)
+
+You can also use the ampersand (&) character.
+
+	set_3 = set_1 & set_2
+
+Subtraction and .difference()
+You can subtract one set from another based on the items that they have in common.
+
+	set_3 = set_1 - set_2
+
+And you can use .difference()
+
+	set_3 = set_1.difference(set_2)
+
+Set comprehensions
+Slightly more advanced way to create a set.
+
+	# there are three things that make a set comprehension
+	# first, it must be between{}
+	comp_1 = {even+2 for even in range(2, 11, 2)}
+
+	# second, there is a for loop that goes over an iterable data type like a range or a string
+
+	# third, there is an action that is done to each item that the for loop iterates over, that action could be a math operation or a method call
+	print(comp_1)
+
+Set comprehension example with repeats:
+
+	comp_2 = {char.lower() for char in "ALLCAPS"}
+	print(comp_2)
+
+
+
+	
 
 
 
