@@ -667,10 +667,354 @@ For a data type to be mutable means that it can have values changed,  removed, o
 
 Here, you would need to reassign the variable mimi_ex2 to change its value.
 
-
 Creating new strings from old strings
 
 	str_1 = "No, you can't."
 	str_2 = "Yes" + str_1[3:11] + "!"
 	print(str_2)
+
+
+References
+You can store numbers and strings to variables through assignments, and you can then assign what those variables have been assigned to new variables.
+
+	ex_1 = 3.14
+	ex_2 = "mimi"
+
+	ex_3 = ex_1
+	ex+4 = ex_2
+	print(ex_3)
+	print(ex_4)
+
+You can't do the same thing with lists. When a list is assigned to a variable, instead of the variable actually storing that list like it would a number or string, it stores a reference to that list, which is a value that points to a piece of data such as a list, so not the list itself.
+
+
+Copy module and deepcopy()
+
+The deepcopy function will allow you to create a copy of a list with its own reference when you need it instead of just a reference to the same list.
+
+	import copy
+
+	ex_1 = [1, 2, 3]
+	ex_2 = copy.deepcopy(ex_1) # now the variable ex_2 has been assigned the list 1, 2, 3 but with a whole new reference!
+
+	ex_2[2] = 12
+	print(ex_1)
+	print(ex_2)
+
+Lists line continuation
+Usually python uses four space indents to be able to tell what code belongs to what. However, it is a bit different with lists. Lists can span multiple lines while keeping their items in between brackets.
+
+General line continuation
+For things other than lists that you want to span multiple lines, you can use a backlash:
+
+	mimi_math = 2 + \
+		    4 + \
+		    1
+	print(mimi_math)
+
+Introduction to dictionaries
+Dictionaries are a data type which can store a collection of values like a list. A dictionary is different from a list in that instead of having to have each of its items be assigned to an index number that is an integer, the items that a dictionary contains are assigned to keys which can be different data types such as floats and strings.
+
+	console = {"nintendo": "switch"} # in this example, the dictionary assigned to the variable console has one key value pair which is made up of the key nintendo and the value switch.
+	console = {"nintendo": "switch", "microsoft": "xbox", "sony": "playstation"} # you can have multiple key value pairs in a dictionary
+
+Accessing by key
+You can use keys to access values from a dictionary like you would use index numbers to access the items in a list or the characters in a string:
+
+	console = {"nintendo": "switch", "microsoft": "xbox", "sony": "playstation"} 
+	print(console["microsoft"])
+
+	val = console["microsoft"] # values from dictionaries can also be assigned to variables
+ 	print(val)
+
+	print("The " + console["sony"] + " 5 is sony's newest gaming console")
+
+Key values
+Keys don't have to be strictly strings, you can use integers, floats, or even boolean values. 
+
+	top_3_desserts = {1: "cheesecake", 2: "petit gateau", 3: "cookies"}
+	floats = {1.23: 1000, 3.216318: 10000, 2.7362: 100000}
+	mixed = {"string": 1, 10283: 2, 4.839: 3, False: 67}
+You can even use different data types in the same dictionary.
+
+Dictionaries are unordered
+Lists have to have the exact same items in the exact same order for python to consider them equivalent
+
+	print([2, 4, 6] == [2, 4, 6]) # True
+	print([2, 4, 6] == [6, 4, 2]) # False
+
+Two dictionaries being compared need to contain the same key value pairs for them to be considered equal, however, they do not need to be in the same order.
+
+In and not in
+You can check whether a key exists by using in or not in operators:
+
+	first = {0: 2.1, 1: 2.2, 2: 2.3}
+	print(0 i first)
+	print(4 not in first)
+	print(5 in first)
+	print(1 not in first)
+
+
+Dictionary methods 1: .keys(), .values(), .items() and .get()
+
+.keys()
+This method allows you to get all of the keys from a dictionary. 
+
+	birth_years = {1929: "grandpa", 1936: "grandma", 1969: "dad"}
+	print(birth_years.keys()) 
+
+	for key in birth_years.keys(): # you can also use a "for loop" with the .keys() method to iterate through the keys of a dictionary
+		print(key)
+
+.values()
+This  method allows you to get all of the values from a dictionary.
+
+.items()
+Allows you to get the keys and the values of a dictionary at the same time.
+
+	birth_years = {1929: "grandpa", 1936: "grandma", 1969: "dad"}
+	print(birth_years.items())
+
+Python returns a list of tuples, each of them containing two items, the first item is a key and the second item and each tuple is a value.
+
+Tuples
+A data type which is like a list, except that it's immutable and isn't closed in parentheses instead of square brackets.
+If you want to iterate though the tuples returned by items using a for loop, you will have to use two placeholder names separated by a comma and a space.
+
+	birth_years = {1929: "grandpa", 1936: "grandma", 1969: "dad"}
+	print(birth_years.items())
+
+	for key, value in birth_years.items():
+	print(key, value)
+
+And if you want to print the keys and values on the same lines, you can type a key and value as two items separated by a comma and a space within print.
+
+Using in and not in on values
+
+	birth_years = {1929: "grandpa", 1936: "grandma", 1969: "dad"}
+	print("grandma" in birth_years.values()) # True
+
+.get()
+Allows you to look for and get a key from a dictionary and return something other than an error message, which stops the program from continuing to run if the key is not found. 
+
+	birth_years = {1929: "grandpa", 1936: "grandma", 1969: "dad"}
+
+	if 1969 in birth_years: 
+		print(birth_years[1969])
+	else:
+		print("1969 is not a key in birth_years.")
+
+print(birth_years.get(1969, "1969 is not a key in  birth_years.")) # we can do a similar thing with just one line, using .get()
+
+Other things you should know about dictionaries
+They are immutable data types like lists, which means variables that have been assigned to  dictionaries also hold references to dictionaries, not the dictionary values themselves
+What that means in practice is that if you try to make a copy of a dictionary by assigning the dictionary to a new variable, any modifications that you tried to make to the new variable would also affect the original dictionary because they both reference the same dictionary.
+
+
+If a dictionary gets too long, you can also make it span multiple lines, just make sure that all of the key value pairs are lined up with each other vertically to keep your code  compliant with PEP8 and more readable.
+
+	birth_years = {1929: "grandpa", 
+		       1936: "grandma", 
+		       1969: "dad", 
+		       2000: "me!"}
+
+You can also use the length function to get the length of the dictionary, which is the number of key-value pairs that it contains.
+
+	print(len(birth_years))
+
+Dictionary methods 2: .fromkeys(), .pop(), and .popitem()
+
+.fromkeys()
+Returns a dictionary using two values that it was given as arguments. The fist argument is used as keys and the second as a value.
+
+	dic_1 = {}.fromkeys(["name"], "mimi") # when you call .fromkeys() it should be used on a dictionary
+	print(dic_1) # given these two arguments .fromkeys() will generate a dictionary with one key value pair
+
+	dic_2 = {}.fromkeys("abc", "mimi") # when using a iterable as the first argument of .fromkeys(), each item in that iterable becomes a key returned, so if we use a string:
+	print(dic_2) # then each character in the string will become a key, and each key would be given the second argument as its value
+
+.fromkeys() can take one or two arguments. When you call it, the first argument needs to be an iterable value, such as a string or list. Each item on that iterable value will be used as a key from the dictionary that .fromkeys() will return.
+The second argument will be used as a value by the dictionary that .fromkeys() returns. It can be of any data type.
+
+Also, each character or item in an iterable can only be used as a key one time.
+You can also give .fromkeys() only one argument
+
+	dic_1 = {}.fromkeys(["name"])
+	print(dic_1) # {'name': None}
+
+.pop()
+This method does the same thing to lists and dictionaries. It removes an item,  where an "item" in a dictionary is a key value pair.
+However, it's a bit different situation for dictionaries since you can't just call .pop() on a dictionary with no argument, and then have it remove the last key value pair. This is because dictionaries are unordered.
+
+	dic_1 = {"author": "J.K. Rowling", "books": "Harry Potter", "volumes": 7}
+	dic_1.pop("books")
+	print(dic_1)
+
+
+In addition to removing a key value pair, it also returns the value of the key value pair that has been removed if you assign it to a variable.
+
+	dic_1 = {"author": "J.K. Rowling", "books": "Harry Potter", "volumes": 7}
+	reading = dic_1.pop("Volumes")
+	print(dic_1)
+	print(reading)
+
+.popitem()
+Allows you to remove the last key value pair from a dictionary without having to give it an argument.
+
+	dic_1 = {"author": "J.K. Rowling", "books": "Harry Potter", "volumes": 7}
+	dic_1.popitem()
+	print(dic_1)
+
+Dictionary methods 3: .clear(), .copy(), and .update()
+
+.clear()
+This method removes everything from a dictionary that it's called on.
+
+.copy()
+Returns us an exact copy of a dictionary that has its own reference, therefore getting around the issue of when a variable is assigned a dictionary, it's actually a reference to a dictionary that its being stored, not an actual dictionary.
+
+	fast_food = {"McDonald's": "Big Mac", 
+		     "Burguer King": "Whopper",
+		     "Popeyes": "The Sandwich"}
+	print(fast_food)
+	burguer = fast_food
+	burguer["McDonalds"] = "McCheddar"
+	print(fast_food)
+	print(burguer)
+
+.update()
+Allows us to add key value pairs from one dictionary to another or overwrite the values of existing keys in a dictionary with values from another dictionary.
+
+	drinks = {"soda": "Sprite"}
+	fast_food.update(drinks)
+	print(fast_food)
+
+If the dictionary being added to has a key that is also in the dictionary being used as an argument for update, then the value from the dictionary being used as an argument will overwrite the value from the dictionary being modified.
+
+	fast_food = {"McDonald's": "Big Mac", 
+		     "Burguer King": "Whopper",
+		     "Popeyes": "The Sandwich"}
+	drinks = {"soda": "Sprite"}
+	fast_food.update(drinks)
+	fast_food["soda": "Coca Cola"]
+	print(fast_food)
+
+	fast_food.update(drinks)
+	print(fast_food)
+
+Dictionary methods 4:
+.setdefault()
+Useful for when you go through a dictionary and look for keys only to find that certain keys that you are looking for don't exist.
+It allows you to give values to keys if they are not found in a dictionary.
+
+	computers = {"Google": "Chromebook", "Apple": "MacBook", "Microsoft": "Surface Pro"}
+	if "Lenovo" not in computers:
+		computers["Lenovo"] = "Thinkpad"
+	print(computers)
+
+	# now in a more compact way, with .setdefault()
+	computers.setdefault("Lenovo", "Thinkpad") # if the key is not found in the dictionary, it will be added and given that value
+	print(computers)
+
+Also, if you were to call .setdefault() on a  key that already exists in a dictionary, then that key's existing value will not be overwritten.
+
+.dict()
+The dictionary function gives you an alternative way to create a dictionary in Python.
+
+	mimi_dictionary = dict() # if you call this function with no arguments, then it just gives you an empty dictionary
+	print(mimi_dictionary)
+
+	babi_dictionary = dict(key="value", a=1, b=2.34, c=True) # if you want to give a dictionary created using the dict() function key-value pairs
+	print(babi_dictionary) # the keys created will appear as strings in the output, so when you create keys using dict()
+	# they must be made up of letters, underscores, and numbers
+
+The first character of a key cannot be a number when that key is being created by dict().
+
+
+Introduction to tuples
+Tuples are a data type made up of a collection of items. Similar to lists, they have a few key differences.
+
+The first is that they are enclosed in parentheses instead of square brackets.
+
+	tuple_1 = ("a", "b", "c")
+	tuple_2 = (1.27, False, [1, 2, 3])
+	tuple_3 = (2, 2, 3, 3, 4)
+
+The other way to create a dictionary is by using the tuple() function. This function returns the tuple and takes one argument that must be of an iterable data type. That argument must be a list or string.
+
+	tuple_4 = tuple([2.34, 34.45, 10])
+	tuple_5 = tuple("abcdefg")
+
+You can also access values from a tuple by index or slice like you can with lists or strings.
+When a tuple is sliced, the resulting slice is also a tuple.
+
+Immutability of tuples
+Unlike lists and dictionaries tuples are an immutable data type. 
+
+Why use tuples?
+Tuples are useful for when you want to have a collection of data that you know you will not change later on in the program. 
+
+Another reason to use tuples over lists or another mutable data type is that they take up less space in memory, less bytes.
+
+
+The final instance where you would want to use a tuple over another data type is as a key in a dictionary. You can't use a list for this purpose without getting an error message.
+
+	occupations = {("Angus", "Young"): "musician", ("Narendra", "Modi"): "prime minister", ("Richard", "Branson"): "entrepeneur", ("Quentin", "Tarantino"): "filmmaker"}
+	print(occupations)
+
+	for item in occupations.item():
+		print(item)
+
+Tuple looping
+
+	major_cities = ("Tokyo", "London", "New York", "Shanghai", "Sydney", "Paris")
+	for city in major_cities:
+		print(city) 
+
+	# to iterate through the tuple using a while loop, we can start by making a count variable
+	# which we will increment to iterate through the index numbers of the tuple
+	count = 0
+	while count <len(major_cities):
+		print(major_cities[count])
+		count += 1
+
+Another way to use a while loop is to iterate through a tuple backwards, starting from its last index number.
+
+	backwards = len(major_cities) - 1
+	while backwards >= 0
+		print(major_cities[backwards])
+		backwards -= 1
+
+Tuple slicing with step
+
+	tuple_1 = (1, 2, 3, 4, 5, 6)
+	print(tuple_1[::3]) # stride lenght of 3
+	print(tuple_1[1::2]) # evens only
+	print(tuple_1[7::-1]) # backwards from 8
+	print(tuple_1[8::-2]) # odds only backwards
+
+Tuple methods
+
+Nested tuples
+
+	nested_tuple = (1, 2, 3, (4, 5), (6, 7, 8))
+	print(nested_tuple[4])
+	print(nested_tuple[5][1])
+
+.count()
+
+	repeat = (1, 2, 2, 2, 3, 3, 1, 3, 3)
+	print(repeat.count(1))
+	print(repeat.count(2))
+	print(repeat.count(3))
+
+.index()
+
+	tuple_1 = (1, 1, 7)
+	print(tuple_1.index(7))
+	print(tuple_1.index(1))
+
+
+
+
 
